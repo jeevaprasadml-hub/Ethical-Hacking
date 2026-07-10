@@ -1,0 +1,55 @@
+nslookup youtube.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	youtube.com
+Address: 127.0.0.1
+
+nslookup -type=ns youtube.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+youtube.com	nameserver = ns2.google.com.
+youtube.com	nameserver = ns1.google.com.
+youtube.com	nameserver = ns3.google.com.
+youtube.com	nameserver = ns4.google.com.
+
+Authoritative answers can be found from:
+
+nslookup -type-ns ifet.ac.in
+*** Invalid option: type-ns
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	ifet.ac.in
+Address: 157.173.216.53
+Name:	ifet.ac.in
+Address: 2a02:4780:11:1654:0:3344:816c:2
+
+nslookup -type=ns ifet.ac.in
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+ifet.ac.in	nameserver = ns2.dns-parking.com.
+ifet.ac.in	nameserver = ns1.dns-parking.com.
+
+Authoritative answers can be found from:
+
+nslookup -type=mx ifet.ac.in
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+ifet.ac.in	mail exchanger = 5 alt1.aspmx.l.google.com.
+ifet.ac.in	mail exchanger = 1 aspmx.l.google.com.
+ifet.ac.in	mail exchanger = 10 alt4.aspmx.l.google.com.
+ifet.ac.in	mail exchanger = 10 alt3.aspmx.l.google.com.
+ifet.ac.in	mail exchanger = 5 alt2.aspmx.l.google.com.
+ifet.ac.in	mail exchanger = 5 mx1.hostinger.com.
+ifet.ac.in	mail exchanger = 10 mx2.hostinger.com.
+
+Authoritative answers can be found from:
+
