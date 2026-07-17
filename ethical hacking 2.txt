@@ -1,0 +1,293 @@
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -sn google.com              
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 04:55 EDT
+Nmap scan report for google.com (142.251.221.110)
+Host is up (0.00090s latency).
+Other addresses for google.com (not scanned): 2404:6800:4007:83f::200e
+rDNS record for 142.251.221.110: cgk03s03-in-f14.1e100.net
+Nmap done: 1 IP address (1 host up) scanned in 0.31 seconds
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -sS google.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 04:55 EDT
+Nmap scan report for google.com (142.251.221.110)
+Host is up (0.0017s latency).
+Other addresses for google.com (not scanned): 2404:6800:4007:83f::200e
+rDNS record for 142.251.221.110: lcmaaa-az-in-f14.1e100.net
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+81/tcp   open  hosts2-ns
+443/tcp  open  https
+3128/tcp open  squid-http
+
+Nmap done: 1 IP address (1 host up) scanned in 4.41 seconds
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -sV google.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 04:56 EDT
+Nmap scan report for google.com (142.251.221.110)
+Host is up (0.0025s latency).
+Other addresses for google.com (not scanned): 2404:6800:4007:83f::200e
+rDNS record for 142.251.221.110: lcmaaa-az-in-f14.1e100.net
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE    VERSION
+80/tcp   open  http-proxy Squid http proxy 6.9
+81/tcp   open  http-proxy Squid http proxy 6.9
+443/tcp  open  ssl/https  gws
+3128/tcp open  http-proxy Squid http proxy 6.9
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=7/17%Time=6A59EE56%P=x86_64-pc-linux-
+SF:gnu%r(GetRequest,1016,"HTTP/1\.0\x20200\x20OK\r\nContent-Type:\x20text/
+SF:html;\x20charset=ISO-8859-1\r\nDate:\x20Fri,\x2017\x20Jul\x202026\x2008
+SF::56:55\x20GMT\r\nExpires:\x20-1\r\nCache-Control:\x20private,\x20max-ag
+SF:e=0\r\nContent-Security-Policy-Report-Only:\x20object-src\x20'none';bas
+SF:e-uri\x20'self';script-src\x20'nonce-v47s0D5GSCqz2aVMs-gDqg'\x20'strict
+SF:-dynamic'\x20'report-sample'\x20'unsafe-eval'\x20'unsafe-inline'\x20htt
+SF:ps:\x20http:;report-uri\x20https://csp\.withgoogle\.com/csp/gws/other-h
+SF:p\r\nAccept-CH:\x20Sec-CH-Prefers-Color-Scheme\r\nP3P:\x20CP=\"This\x20
+SF:is\x20not\x20a\x20P3P\x20policy!\x20See\x20g\.co/p3phelp\x20for\x20more
+SF:\x20info\.\"\r\nServer:\x20gws\r\nX-XSS-Protection:\x200\r\nX-Frame-Opt
+SF:ions:\x20SAMEORIGIN\r\nSet-Cookie:\x20__Secure-STRP=ANmZwa2-bV-SHviiJnw
+SF:qgAr1Us-7_--G7unfW6FE2bQnWVaWFjgg1IDlnHU-F9WrlJuyW4IB30dY5qXmpxihbJuak1
+SF:AEQZ43Uw;\x20expires=Fri,\x2017-Jul-2026\x2009:01:55\x20GMT;\x20path=/;
+SF:\x20domain=\.google\.com;\x20Secure;\x20SameSite=strict\r\nSet-Cookie:\
+SF:x20AEC=AdJVEavCEbc0h71E0Qi-n6eDaMuR3Blik4AIeFZCWZvf9FgDQwkum5jQ_g;\x20e
+SF:xpires=Wed,\x2013-Jan-2027\x2008:56:55\x20GMT;\x20pat")%r(HTTPOptions,7
+SF:15,"HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\r\nContent-Type:\x20te
+SF:xt/html;\x20charset=UTF-8\r\nReferrer-Policy:\x20no-referrer\r\nContent
+SF:-Length:\x201592\r\nDate:\x20Fri,\x2017\x20Jul\x202026\x2008:56:55\x20G
+SF:MT\r\nAlt-Svc:\x20h3=\":443\";\x20ma=2592000,h3-29=\":443\";\x20ma=2592
+SF:000\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=en>\n\x20\x20<meta\x20char
+SF:set=utf-8>\n\x20\x20<meta\x20name=viewport\x20content=\"initial-scale=1
+SF:,\x20minimum-scale=1,\x20width=device-width\">\n\x20\x20<title>Error\x2
+SF:0405\x20\(Method\x20Not\x20Allowed\)!!1</title>\n\x20\x20<style>\n\x20\
+SF:x20\x20\x20\*{margin:0;padding:0}html,code{font:15px/22px\x20arial,sans
+SF:-serif}html{background:#fff;color:#222;padding:15px}body{margin:7%\x20a
+SF:uto\x200;max-width:390px;min-height:180px;padding:30px\x200\x2015px}\*\
+SF:x20>\x20body{background:url\(//www\.google\.com/images/errors/robot\.pn
+SF:g\)\x20100%\x205px\x20no-repeat;padding-right:205px}p{margin:11px\x200\
+SF:x2022px;overflow:hidden}ins{color:#777;text-decoration:none}a\x20img{bo
+SF:rder:0}@media\x20screen\x20and\x20\(max-width:772px\){body{background:n
+SF:one;margin-top:0;max-width:none;padding-right");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 98.96 seconds
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -p 80 --script http-headers google.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 04:59 EDT
+Nmap scan report for google.com (142.251.221.206)
+Host is up (0.00056s latency).
+Other addresses for google.com (not scanned): 2404:6800:4007:821::200e
+rDNS record for 142.251.221.206: pnmaaa-ba-in-f14.1e100.net
+
+PORT   STATE SERVICE
+80/tcp open  http
+| http-headers: 
+|   Location: http://www.google.com/
+|   Content-Type: text/html; charset=UTF-8
+|   Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-WaL1Pg8ds7WW8pt2RxasBg' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+|   Date: Fri, 17 Jul 2026 08:27:52 GMT
+|   Expires: Sun, 16 Aug 2026 08:27:52 GMT
+|   Cache-Control: public, max-age=2592000
+|   Server: gws
+|   Content-Length: 219
+|   X-XSS-Protection: 0
+|   X-Frame-Options: SAMEORIGIN
+|   Age: 1895
+|   Cache-Status: tg42cdec;hit;detail=match
+|   Via: 1.1 tg42cdec (squid/6.9)
+|   Connection: close
+|   
+|_  (Request type: GET)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.47 seconds
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -sL google.com                        
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 04:59 EDT
+Nmap scan report for google.com (142.251.221.206)
+Other addresses for google.com (not scanned): 2404:6800:4007:821::200e
+rDNS record for 142.251.221.206: pnmaaa-ba-in-f14.1e100.net
+Nmap done: 1 IP address (0 hosts up) scanned in 0.00 seconds
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -sU google.com                     
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 05:00 EDT
+Stats: 0:02:29 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 32.20% done; ETC: 05:07 (0:05:14 remaining)
+Stats: 0:02:32 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 32.35% done; ETC: 05:07 (0:05:18 remaining)                                                                                                                                                                          
+Stats: 0:02:33 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan                                                                                                                                                                     
+UDP Scan Timing: About 32.40% done; ETC: 05:07 (0:05:19 remaining)                                                                                                                                                                          
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ 
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -sU google.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 05:07 EDT
+Stats: 0:05:30 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 40.65% done; ETC: 05:20 (0:08:03 remaining)
+Stats: 0:05:34 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 40.85% done; ETC: 05:20 (0:08:05 remaining)
+Stats: 0:05:36 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 40.90% done; ETC: 05:20 (0:08:07 remaining)
+Stats: 0:05:39 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 41.05% done; ETC: 05:20 (0:08:08 remaining)
+Stats: 0:05:40 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 41.10% done; ETC: 05:21 (0:08:09 remaining)
+Stats: 0:05:41 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 41.15% done; ETC: 05:21 (0:08:09 remaining)
+
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -O google.com 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 05:17 EDT
+Nmap scan report for google.com (142.251.221.110)
+Host is up (0.0053s latency).
+Other addresses for google.com (not scanned): 2404:6800:4007:83f::200e
+rDNS record for 142.251.221.110: cgk03s03-in-f14.1e100.net
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+81/tcp   open  hosts2-ns
+443/tcp  open  https
+3128/tcp open  squid-http
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: bridge|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (96%), QEMU (92%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox (96%), QEMU user mode network gateway (92%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 9.24 seconds
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -O ifet.ac.in
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 05:18 EDT
+Nmap scan report for ifet.ac.in (157.173.216.53)
+Host is up (0.020s latency).
+Other addresses for ifet.ac.in (not scanned): 2a02:4780:11:1654:0:3344:816c:2
+Not shown: 961 filtered tcp ports (no-response), 33 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+81/tcp   open  hosts2-ns
+443/tcp  open  https
+3128/tcp open  squid-http
+3306/tcp open  mysql
+Aggressive OS guesses: QEMU user mode network gateway (96%), Oracle Virtualbox (93%), Dell 1815dn printer (88%), VxWorks (88%), Bay Networks BayStack 450 switch (software version 3.1.0.22) (88%), Allied Telesyn AT-9006SX/SC switch (88%), Samsung CLP-315W printer (87%), Samsung CLX-3160FN printer (87%), Xerox WorkCentre 4150 printer (86%), HP-UX B.10.20 (86%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 8.94 seconds
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ nmap -A google.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-07-17 05:19 EDT
+Nmap scan report for google.com (142.251.221.110)
+Host is up (0.0021s latency).
+Other addresses for google.com (not scanned): 2404:6800:4007:83f::200e
+rDNS record for 142.251.221.110: lcmaaa-az-in-f14.1e100.net
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE    VERSION
+80/tcp   open  http-proxy Squid http proxy 6.9
+| http-open-proxy: Potentially OPEN proxy.
+|_Methods supported: GET HEAD
+|_http-title: Did not follow redirect to http://www.google.com/
+|_http-server-header: gws
+81/tcp   open  http-proxy Squid http proxy 6.9
+443/tcp  open  ssl/https  gws
+| ssl-cert: Subject: commonName=*.google.com
+| Subject Alternative Name: DNS:*.google.com, DNS:*.appengine.google.com, DNS:*.bdn.dev, DNS:*.origin-test.bdn.dev, DNS:*.cloud.google.com, DNS:*.crowdsource.google.com, DNS:*.datacompute.google.com, DNS:*.google.ca, DNS:*.google.cl, DNS:*.google.co.in, DNS:*.google.co.jp, DNS:*.google.co.uk, DNS:*.google.com.ar, DNS:*.google.com.au, DNS:*.google.com.br, DNS:*.google.com.co, DNS:*.google.com.mx, DNS:*.google.com.tr, DNS:*.google.com.vn, DNS:*.google.de, DNS:*.google.es, DNS:*.google.fr, DNS:*.google.hu, DNS:*.google.it, DNS:*.google.nl, DNS:*.google.pl, DNS:*.google.pt, DNS:*.gemini.cloud.google.com, DNS:*.gstatic.com, DNS:*.metric.gstatic.com, DNS:*.gvt1.com, DNS:*.gcpcdn.gvt1.com, DNS:*.gvt2.com, DNS:*.gcp.gvt2.com, DNS:*.url.google.com, DNS:*.youtube-nocookie.com, DNS:*.ytimg.com, DNS:ai.android, DNS:android.com, DNS:*.android.com, DNS:*.flash.android.com, DNS:g.co, DNS:*.g.co, DNS:goo.gl, DNS:www.goo.gl, DNS:google-analytics.com, DNS:*.google-analytics.com, DNS:google.com, DNS:googlecommerce.com, DNS:*.googlecommerce.com, DNS:urchin.com, DNS:*.urchin.com, DNS:youtu.be, DNS:youtube.com, DNS:*.youtube.com, DNS:music.youtube.com, DNS:*.music.youtube.com, DNS:youtubeeducation.com, DNS:*.youtubeeducation.com, DNS:youtubekids.com, DNS:*.youtubekids.com, DNS:yt.be, DNS:*.yt.be, DNS:android.clients.google.com, DNS:*.aistudio.google.com
+| Not valid before: 2026-06-29T08:37:35
+|_Not valid after:  2026-09-21T08:37:34
+|_http-title: Did not follow redirect to https://www.google.com/
+|_http-server-header: gws
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/html; charset=ISO-8859-1
+|     Date: Fri, 17 Jul 2026 09:20:07 GMT
+|     Expires: -1
+|     Cache-Control: private, max-age=0
+|     Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-nZptB36tbZO9JlKwQhs4fA' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+|     Accept-CH: Sec-CH-Prefers-Color-Scheme
+|     P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+|     Server: gws
+|     X-XSS-Protection: 0
+|     X-Frame-Options: SAMEORIGIN
+|     Set-Cookie: __Secure-STRP=ANmZwa2NabsM4GAJ7f_LBFqKwotkgvTJwppnY-MrH6b3iemTTmtN_ekC8sEc6bw5cb57oJtrAdeJP1JZ4inBOkPZ0H5uTfV5ZeZQ; expires=Fri, 17-Jul-2026 09:25:07 GMT; path=/; domain=.google.com; Secure; SameSite=strict
+|     Set-Cookie: AEC=AdJVEauwJfsQ_cMPpJF05aJ06qF0X3968OYVEV8LeeE5JOIEJXMyXI3y6g; expires=Wed, 13-Jan-2027 09:20:07 GMT; p
+|   HTTPOptions: 
+|     HTTP/1.0 405 Method Not Allowed
+|     Content-Type: text/html; charset=UTF-8
+|     Referrer-Policy: no-referrer
+|     Content-Length: 1592
+|     Date: Fri, 17 Jul 2026 09:20:07 GMT
+|     Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+|     <!DOCTYPE html>
+|     <html lang=en>
+|     <meta charset=utf-8>
+|     <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+|     <title>Error 405 (Method Not Allowed)!!1</title>
+|     <style>
+|_    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right
+|_ssl-date: TLS randomness does not represent time
+3128/tcp open  http-proxy Squid http proxy 6.9
+| http-server-header: 
+|   gws
+|_  squid/6.9
+|_http-title: Access Denied
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=7/17%Time=6A59F3C7%P=x86_64-pc-linux-
+SF:gnu%r(GetRequest,347F,"HTTP/1\.0\x20200\x20OK\r\nContent-Type:\x20text/
+SF:html;\x20charset=ISO-8859-1\r\nDate:\x20Fri,\x2017\x20Jul\x202026\x2009
+SF::20:07\x20GMT\r\nExpires:\x20-1\r\nCache-Control:\x20private,\x20max-ag
+SF:e=0\r\nContent-Security-Policy-Report-Only:\x20object-src\x20'none';bas
+SF:e-uri\x20'self';script-src\x20'nonce-nZptB36tbZO9JlKwQhs4fA'\x20'strict
+SF:-dynamic'\x20'report-sample'\x20'unsafe-eval'\x20'unsafe-inline'\x20htt
+SF:ps:\x20http:;report-uri\x20https://csp\.withgoogle\.com/csp/gws/other-h
+SF:p\r\nAccept-CH:\x20Sec-CH-Prefers-Color-Scheme\r\nP3P:\x20CP=\"This\x20
+SF:is\x20not\x20a\x20P3P\x20policy!\x20See\x20g\.co/p3phelp\x20for\x20more
+SF:\x20info\.\"\r\nServer:\x20gws\r\nX-XSS-Protection:\x200\r\nX-Frame-Opt
+SF:ions:\x20SAMEORIGIN\r\nSet-Cookie:\x20__Secure-STRP=ANmZwa2NabsM4GAJ7f_
+SF:LBFqKwotkgvTJwppnY-MrH6b3iemTTmtN_ekC8sEc6bw5cb57oJtrAdeJP1JZ4inBOkPZ0H
+SF:5uTfV5ZeZQ;\x20expires=Fri,\x2017-Jul-2026\x2009:25:07\x20GMT;\x20path=
+SF:/;\x20domain=\.google\.com;\x20Secure;\x20SameSite=strict\r\nSet-Cookie
+SF::\x20AEC=AdJVEauwJfsQ_cMPpJF05aJ06qF0X3968OYVEV8LeeE5JOIEJXMyXI3y6g;\x2
+SF:0expires=Wed,\x2013-Jan-2027\x2009:20:07\x20GMT;\x20p")%r(HTTPOptions,7
+SF:15,"HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\r\nContent-Type:\x20te
+SF:xt/html;\x20charset=UTF-8\r\nReferrer-Policy:\x20no-referrer\r\nContent
+SF:-Length:\x201592\r\nDate:\x20Fri,\x2017\x20Jul\x202026\x2009:20:07\x20G
+SF:MT\r\nAlt-Svc:\x20h3=\":443\";\x20ma=2592000,h3-29=\":443\";\x20ma=2592
+SF:000\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=en>\n\x20\x20<meta\x20char
+SF:set=utf-8>\n\x20\x20<meta\x20name=viewport\x20content=\"initial-scale=1
+SF:,\x20minimum-scale=1,\x20width=device-width\">\n\x20\x20<title>Error\x2
+SF:0405\x20\(Method\x20Not\x20Allowed\)!!1</title>\n\x20\x20<style>\n\x20\
+SF:x20\x20\x20\*{margin:0;padding:0}html,code{font:15px/22px\x20arial,sans
+SF:-serif}html{background:#fff;color:#222;padding:15px}body{margin:7%\x20a
+SF:uto\x200;max-width:390px;min-height:180px;padding:30px\x200\x2015px}\*\
+SF:x20>\x20body{background:url\(//www\.google\.com/images/errors/robot\.pn
+SF:g\)\x20100%\x205px\x20no-repeat;padding-right:205px}p{margin:11px\x200\
+SF:x2022px;overflow:hidden}ins{color:#777;text-decoration:none}a\x20img{bo
+SF:rder:0}@media\x20screen\x20and\x20\(max-width:772px\){body{background:n
+SF:one;margin-top:0;max-width:none;padding-right");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: bridge|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (96%), QEMU (92%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox (96%), QEMU user mode network gateway (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   1.08 ms lcmaaa-az-in-f14.1e100.net (142.251.221.110)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 148.64 seconds
