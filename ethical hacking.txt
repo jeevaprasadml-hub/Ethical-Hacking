@@ -52,4 +52,246 @@ ifet.ac.in	mail exchanger = 5 mx1.hostinger.com.
 ifet.ac.in	mail exchanger = 10 mx2.hostinger.com.
 
 Authoritative answers can be found from:
+ifetcslab@ifetcslab-System-Product-Name:~$ nslookup -type=ANY vulnweb.com 8.8.8.8
+Server:		8.8.8.8
+Address:	8.8.8.8#53
+
+Non-authoritative answer:
+Name:	vulnweb.com
+Address: 44.228.249.3
+vulnweb.com	nameserver = ns-1450.awsdns-53.org.
+vulnweb.com	nameserver = ns-1588.awsdns-06.co.uk.
+vulnweb.com	nameserver = ns-557.awsdns-05.net.
+vulnweb.com	nameserver = ns-136.awsdns-17.com.
+vulnweb.com
+	origin = ns-136.awsdns-17.com
+	mail addr = awsdns-hostmaster.amazon.com
+	serial = 1
+	refresh = 7200
+	retry = 900
+	expire = 1209600
+	minimum = 86400
+vulnweb.com	mail exchanger = 10 alt2.aspmx.l.google.com.
+vulnweb.com	mail exchanger = 10 alt4.aspmx.l.google.com.
+vulnweb.com	mail exchanger = 10 alt3.aspmx.l.google.com.
+vulnweb.com	mail exchanger = 10 alt1.aspmx.l.google.com.
+vulnweb.com	mail exchanger = 10 aspmx.l.google.com.
+vulnweb.com	text = "v=spf1 ~all"
+vulnweb.com	text = "google-site-verification=4LQORV-lTi-d4GPxtBEQWmFnwff7UAazQc9gZvHukbw"
+
+Authoritative answers can be found from:
+
+ifetcslab@ifetcslab-System-Product-Name:~$ nslookup vulnweb.com 8.8.8.8
+Server:		8.8.8.8
+Address:	8.8.8.8#53
+
+Non-authoritative answer:
+Name:	vulnweb.com
+Address: 44.228.249.3
+
+ifetcslab@ifetcslab-System-Product-Name:~$ nslookup -debug vulnweb.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+------------
+    QUESTIONS:
+	vulnweb.com, type = A, class = IN
+    ANSWERS:
+    ->  vulnweb.com
+	internet address = 44.228.249.3
+	ttl = 6594
+    AUTHORITY RECORDS:
+    ADDITIONAL RECORDS:
+------------
+Non-authoritative answer:
+Name:	vulnweb.com
+Address: 44.228.249.3
+------------
+    QUESTIONS:
+	vulnweb.com, type = AAAA, class = IN
+    ANSWERS:
+    AUTHORITY RECORDS:
+    ->  vulnweb.com
+	origin = ns-136.awsdns-17.com
+	mail addr = awsdns-hostmaster.amazon.com
+	serial = 1
+	refresh = 7200
+	retry = 900
+	expire = 1209600
+	minimum = 86400
+	ttl = 60
+    ADDITIONAL RECORDS:
+------------
+
+
+ifetcslab@ifetcslab-System-Product-Name:~$ whatweb google.com
+http://google.com [301 Moved Permanently] Country[UNITED STATES][US], HTTPServer[gws], IP[172.217.24.206], RedirectLocation[http://www.google.com/], Title[301 Moved], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+http://www.google.com/ [200 OK] Cookies[AEC,NID,__Secure-STRP], Country[UNITED STATES][US], HTML5, HTTPServer[gws], HttpOnly[AEC,NID], IP[142.251.153.119], Script, Title[Google], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+ifetcslab@ifetcslab-System-Product-Name:~$ whatweb -v google.com
+WhatWeb report for http://google.com
+Status    : 301 Moved Permanently
+Title     : 301 Moved
+IP        : 172.217.24.206
+Country   : UNITED STATES, US
+
+Summary   : HTTPServer[gws], RedirectLocation[http://www.google.com/], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+
+Detected Plugins:
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : gws (from server string)
+
+[ RedirectLocation ]
+	HTTP Server string location. used with http-status 301 and 
+	302 
+
+	String       : http://www.google.com/ (from location)
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : content-security-policy-report-only,cache-status (from headers)
+
+[ Via-Proxy ]
+	This plugin extracts the proxy server details from the Via 
+	param of the HTTP header. 
+
+	String       : 1.1 tg42cdec (squid/6.9)
+
+[ X-Frame-Options ]
+	This plugin retrieves the X-Frame-Options value from the 
+	HTTP header. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.
+	aspx
+
+	String       : SAMEORIGIN
+
+[ X-XSS-Protection ]
+	This plugin retrieves the X-XSS-Protection value from the 
+	HTTP header. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.
+	aspx
+
+	String       : 0
+
+HTTP Headers:
+	HTTP/1.1 301 Moved Permanently
+	Location: http://www.google.com/
+	Content-Type: text/html; charset=UTF-8
+	Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-WaL1Pg8ds7WW8pt2RxasBg' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+	Date: Fri, 17 Jul 2026 08:27:52 GMT
+	Expires: Sun, 16 Aug 2026 08:27:52 GMT
+	Cache-Control: public, max-age=2592000
+	Server: gws
+	Content-Length: 219
+	X-XSS-Protection: 0
+	X-Frame-Options: SAMEORIGIN
+	Age: 924
+	Cache-Status: tg42cdec;hit;detail=match
+	Via: 1.1 tg42cdec (squid/6.9)
+	Connection: close
+	
+WhatWeb report for http://www.google.com/
+Status    : 200 OK
+Title     : Google
+IP        : 142.251.157.119
+Country   : UNITED STATES, US
+
+Summary   : Cookies[AEC,NID,__Secure-STRP], HTML5, HTTPServer[gws], HttpOnly[AEC,NID], Script, UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+
+Detected Plugins:
+[ Cookies ]
+	Display the names of cookies in the HTTP headers. The 
+	values are not returned to save on space. 
+
+	String       : __Secure-STRP
+	String       : AEC
+	String       : NID
+
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : gws (from server string)
+
+[ HttpOnly ]
+	If the HttpOnly flag is included in the HTTP set-cookie 
+	response header and the browser supports it then the cookie 
+	cannot be accessed through client side script - More Info: 
+	http://en.wikipedia.org/wiki/HTTP_cookie 
+
+	String       : AEC,NID
+
+[ Script ]
+	This plugin detects instances of script HTML elements and 
+	returns the script language/type. 
+
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : content-security-policy-report-only,cache-status (from headers)
+
+[ Via-Proxy ]
+	This plugin extracts the proxy server details from the Via 
+	param of the HTTP header. 
+
+	String       : 1.1 tg42cdec (squid/6.9)
+
+[ X-Frame-Options ]
+	This plugin retrieves the X-Frame-Options value from the 
+	HTTP header. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.
+	aspx
+
+	String       : SAMEORIGIN
+
+[ X-XSS-Protection ]
+	This plugin retrieves the X-XSS-Protection value from the 
+	HTTP header. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.
+	aspx
+
+	String       : 0
+
+HTTP Headers:
+	HTTP/1.1 200 OK
+	Content-Type: text/html; charset=ISO-8859-1
+	Date: Fri, 17 Jul 2026 08:43:17 GMT
+	Expires: -1
+	Cache-Control: private, max-age=0
+	Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-SBn2KHAeLgF9ON-rrvc8ng' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+	P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+	Content-Encoding: gzip
+	Server: gws
+	Content-Length: 27898
+	X-XSS-Protection: 0
+	X-Frame-Options: SAMEORIGIN
+	Set-Cookie: __Secure-STRP=ANmZwa0ieaPTor1KCulz7He9uPyrTjdM2Px-1ZQzocw6IWK0SNeUOylpESTw9k6pPQJTaaDgF9rsIGZOObTiu4ewQYJNSAhlOivH; expires=Fri, 17-Jul-2026 08:48:17 GMT; path=/; domain=.google.com; Secure; SameSite=strict
+	Set-Cookie: AEC=AdJVEatjFLVM18n6yaNOI2eE-BlLNytcLWjbBFAZiZMs6wF8Z9Yga-ykByI; expires=Wed, 13-Jan-2027 08:43:17 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax
+	Set-Cookie: NID=533=dUoWrWK7XKYmGU0pJzGz87saPL8hDrxWlEWEty8gIgAglRgUCA5xBk1UhfUJeqdMIAzEOp6b7jGBdDqyLmmU96F-2guTDg1daSyBPUahUw97AHBRR39lRnnyQiS-nYydUhLujEnzoilL7t9NdJnfCrK2JYUPBj7zQn9yo26kXJ1oROqPxhnmfSmJmwIaa8MwvlFPUtdCaXDO-AyxwZmNI6AJ; expires=Sat, 16-Jan-2027 08:43:17 GMT; path=/; domain=.google.com; HttpOnly
+	Cache-Status: tg42cdec;detail=mismatch
+	Via: 1.1 tg42cdec (squid/6.9)
+	Connection: close
+	
+ifetcslab@ifetcslab-System-Product-Name:~$ whatweb -a 1 google.com
+http://google.com [301 Moved Permanently] Country[UNITED STATES][US], HTTPServer[gws], IP[172.217.24.206], RedirectLocation[http://www.google.com/], Title[301 Moved], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+http://www.google.com/ [200 OK] Cookies[AEC,NID,__Secure-STRP], Country[UNITED STATES][US], HTML5, HTTPServer[gws], HttpOnly[AEC,NID], IP[142.251.152.119], Script, Title[Google], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+ifetcslab@ifetcslab-System-Product-Name:~$ whatweb -a 3 google.com
+http://google.com [301 Moved Permanently] Country[UNITED STATES][US], HTTPServer[gws], IP[172.217.24.206], RedirectLocation[http://www.google.com/], Title[301 Moved], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+http://www.google.com/ [200 OK] Cookies[AEC,NID,__Secure-STRP], Country[UNITED STATES][US], HTML5, HTTPServer[gws], HttpOnly[AEC,NID], IP[142.251.156.119], Script, Title[Google], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
 
