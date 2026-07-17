@@ -294,4 +294,138 @@ http://www.google.com/ [200 OK] Cookies[AEC,NID,__Secure-STRP], Country[UNITED S
 ifetcslab@ifetcslab-System-Product-Name:~$ whatweb -a 3 google.com
 http://google.com [301 Moved Permanently] Country[UNITED STATES][US], HTTPServer[gws], IP[172.217.24.206], RedirectLocation[http://www.google.com/], Title[301 Moved], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
 http://www.google.com/ [200 OK] Cookies[AEC,NID,__Secure-STRP], Country[UNITED STATES][US], HTML5, HTTPServer[gws], HttpOnly[AEC,NID], IP[142.251.156.119], Script, Title[Google], UncommonHeaders[content-security-policy-report-only,cache-status], Via-Proxy[1.1 tg42cdec (squid/6.9)], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]
+┌──(crypl㉿vbox)-[~]
+└─$ theHarvester -d vulnweb.com -1 10 -b google
+Read proxies.yaml from /home/crypl/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+usage: theHarvester [-h] -d DOMAIN [-l LIMIT] [-S START] [-p] [-s] [--screenshot SCREENSHOT] [-v] [-e DNS_SERVER] [-t] [-r [DNS_RESOLVE]] [-n] [-c] [-f FILENAME] [-b SOURCE]
+theHarvester: error: unrecognized arguments: -1 10
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ theHarvester -d vulnweb.com -1 10 -b google
+Read proxies.yaml from /home/crypl/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+usage: theHarvester [-h] -d DOMAIN [-l LIMIT] [-S START] [-p] [-s] [--screenshot SCREENSHOT] [-v] [-e DNS_SERVER] [-t] [-r [DNS_RESOLVE]] [-n] [-c] [-f FILENAME] [-b SOURCE]
+theHarvester: error: unrecognized arguments: -1 10
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ theHarvester-h                             
+theHarvester-h: command not found
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ theHarvester -d vulnweb.com -1 10 -b google
+Read proxies.yaml from /home/crypl/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+usage: theHarvester [-h] -d DOMAIN [-l LIMIT] [-S START] [-p] [-s] [--screenshot SCREENSHOT] [-v] [-e DNS_SERVER] [-t] [-r [DNS_RESOLVE]] [-n] [-c] [-f FILENAME] [-b SOURCE]
+theHarvester: error: unrecognized arguments: -1 10
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ theHarvester -d google.com                 
+Read proxies.yaml from /home/crypl/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+
+[*] No IPs found.
+
+[*] No emails found.
+
+[*] No hosts found.
+
+
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ theHarvester -d bing.com  
+Read proxies.yaml from /home/crypl/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+
+[*] No IPs found.
+
+[*] No emails found.
+
+[*] No hosts found.
+
+
+                                                                                                                                                                                                                                  
+┌──(crypl㉿vbox)-[~]
+└─$ theHarvester -d google.com    
+Read proxies.yaml from /home/crypl/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+
+[*] No IPs found.
+
+[*] No emails found.
+
+[*] No hosts found.
+
 
